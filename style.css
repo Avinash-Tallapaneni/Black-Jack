@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background: url("https://res.cloudinary.com/practicaldev/image/fetch/s--BuPz-p40--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nphrgz8yfnjylrwfr0yl.png");
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border: 2px solid red;
+    background-size: cover;
+    background-image: 2px solid red;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    height: 100%;
+}
+
+.cards-viewing {
+    border: 2px solid red;
+    margin: 50px 0px 10px;
+    padding: 20px 0px;
+    position: relative;
+}
+
+.hit-stay-buttons {
+    border: 2px solid red;
+}
+
+h1 {
+    color: goldenrod;
+    border: 2px solid red;
+
+}
+
+.hit, .stay {
+    background-color: goldenrod;
+    color: #016f32;
+    width: 150px;
+    font-weight: bold;
+    border: goldenrod;
+    padding: 5px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red
+}
+
+
+.dealer-cards img {
+    width: 75px;
+    height: 100px;
+    margin: 2px;
+    border: 2px solid red
+}
+.player-cards img{
+    width: 75px;
+    height: 100px;
+    margin: 2px;
+    border: 2px solid red
+}
