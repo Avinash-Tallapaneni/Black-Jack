@@ -1,8 +1,9 @@
+try {
 let dealerSum = 0;
 let playerSum = 0;
 let playerAce = 0;
 let dealerAce = 0;
-
+var canHit = true;
 var deck;
 
 
@@ -26,7 +27,7 @@ const createDeck = () => {
     deck =[];
     for(let i = 0 ; i < card_values.length; i++) {
         for (let j = 0; j < card_types.length; j++) {
-            deck.push(card_values[i] + " - " + card_types[j]);
+            deck.push(card_values[i] + "-" + card_types[j]);
         }
     }
 //  console.log(deck);
@@ -52,8 +53,8 @@ const startGame = () => {
     for(let i = 0; i < 2 ; i++) {
 
         let dealercardImg = document.createElement("img");
-        let dealerOpeningCards = deck.shift(); // return string
-        dealercardImg.src = "./Black jack cards/" + dealerOpeningCards+".png";
+        let dealerOpeningCards = deck.pop(); // return string
+        dealercardImg.src = "./Black_jack_cards/" + dealerOpeningCards+".png";
         document.getElementById("dealerOpeningCardsImg").append(dealercardImg);
 
         dealerSum += openingCards(dealerOpeningCards);
@@ -61,8 +62,8 @@ const startGame = () => {
 
 
         let playerCardImg = document.createElement("img");
-        let playerOpeningCards = deck.shift(); // return string
-        playerCardImg.src = "./Black jack cards/" + playerOpeningCards + ".png";
+        let playerOpeningCards = deck.pop(); // return string
+        playerCardImg.src = "./Black_jack_cards/" + playerOpeningCards + ".png";
         document.getElementById("playerOpeningCardsImg").append(playerCardImg);
 
         playerSum += openingCards(playerOpeningCards);
@@ -75,7 +76,7 @@ const startGame = () => {
 
             let dealercardImg = document.createElement("img");
             let dealerOpeningCards = deck.shift(); // return string
-            dealercardImg.src = "./Black jack cards/" + dealerOpeningCards+".png";
+            dealercardImg.src = "./Black_jack_cards/" + dealerOpeningCards+".png";
             document.getElementById("dealerOpeningCardsImg").append(dealercardImg);
             dealerSum += openingCards(dealerOpeningCards);
             console.log("dealerSum :" + dealerSum);
@@ -109,9 +110,13 @@ const openingCards = (el) => {
 
 const hit = () => {
 
+    if(!canHit) {
+        return
+    }
+
     let playerCardImg = document.createElement("img");
-    let value = deck.shift();
-    playerCardImg.src = "./Black jack cards/" + value + ".png";
+    let value = deck.pop();
+    playerCardImg.src = "./Black_jack_cards/" + value + ".png";
     document.getElementById("playerOpeningCardsImg").append(playerCardImg);
     playerSum += openingCards(value);
     console.log("playerSum :" + playerSum);
@@ -119,6 +124,7 @@ const hit = () => {
     // console.log(playerAce);
     if(playerSum > 22 || dealerSum >22) {
         aceChange();
+        canHit = false;
     }
     console.log("playerSum ace:" + playerSum);
     console.log("playerAce :" + playerAce);
@@ -127,15 +133,42 @@ const hit = () => {
 
 
 const stay = () => {
-    let dealerHitCard = deck.shift()
-    playerSum += openingCards(dealerHitCard);
-    console.log("playerSum :" + dealerSum);
+    let card = deck.shift()
+    dealerSum += openingCards(card);
+    canHit = false;
+    console.log("dealerSum :" + dealerSum);
     // console.log(playerAce);
     if(dealerSum > 22) {
         aceChange();
     }
     console.log("playerSum ace:" + playerSum);
     console.log("playerAce :" + playerAce);
+
+
+
+    let message = "";
+    const displayMessage = {
+        0 : "You lose!, Try again", //dealer sum is greater than player
+        1 : "congradualation, You Win!", // player sum is greater than dealer
+        2 : "ahhh, Its a Tie", //if both have same value
+    }
+    if(playerSum > 21 || playerSum < dealerSum) {
+        message = displayMessage[0];
+    } else if (playerSum == dealerSum) {
+        message = displayMessage[2];
+
+    } else if (dealerSum > 21 || playerSum > dealerSum) {
+        message = displayMessage[1];
+
+    }
+
+    // document.querySelectorAll(".dealer-header").innerText = dealerSum;
+    // document.querySelectorAll(".player-header").innerText = playerSum;
+    // document.querySelectorAll(".result").innerText = message;
+    document.querySelectorAll(".dealer-header")[0].innerText = dealerSum;
+    document.querySelectorAll(".player-header")[0].innerText = playerSum;
+    document.querySelectorAll(".result")[0].innerText = message;
+
 
 }
 
@@ -155,7 +188,10 @@ const aceChange = () => {
 
 }
 
-
+}catch (error) {
+    // if error true => console.log(err)
+    console.error(error);
+  }
 
 
 
