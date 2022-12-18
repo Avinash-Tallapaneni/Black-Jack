@@ -10,66 +10,72 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     background-size: cover;
-    background-image: 2px solid red;
+    /* background-image: 2px solid red; */
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw; */
+    height: 100%;
 }
 
 .container {
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 100%;
 }
 
 .cards-viewing {
-    border: 2px solid red;
-    margin: 50px 0px 10px;
+    /* border: 2px solid red; */
+    margin: 20px 0px 20px;
     padding: 20px 0px;
     position: relative;
 }
 
-.hit-stay-buttons {
-    border: 2px solid red;
-}
-
 h1 {
     color: goldenrod;
-    border: 2px solid red;
+    margin: 20px 0 0 0;
+    /* border: 2px solid red; */
 
+}
+
+.hit-stay-buttons {
+    /* border: 2px solid red; */
+    margin: 0 0 30px;
 }
 
 #hit, #stay {
     background-color: goldenrod;
     color: #016f32;
-    width: 150px;
+    width: 10rem;
     font-weight: bold;
     border: goldenrod;
-    padding: 5px;
-    margin: 5px;
+    padding: 5px 20px;
+    margin: 5px 10px;
     justify-content: center;
     align-items: center;
-    border: 2px solid red
+    /* border: 2px solid red */
 }
 
 
 .dealer-cards img {
-    width: 75px;
-    height: 100px;
-    margin: 2px;
-    border: 2px solid red
+    width: 7rem;
+    height: 10rem;
+    margin: 20px 10px 0;
+    /* border: 2px solid red */
 }
 .player-cards img{
-    width: 75px;
-    height: 100px;
-    margin: 2px;
-    border: 2px solid red
+    width: 7rem;
+    height: 10rem;
+    margin: 20px 10px 0;
+    /* border: 2px solid red */
 }
 
 p {
     color: white;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+
+.result {
+    margin: 20px 0 0;
 }
