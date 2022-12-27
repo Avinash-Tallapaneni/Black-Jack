@@ -1,32 +1,34 @@
-* {
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
 }
-
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
-    background: url("https://res.cloudinary.com/practicaldev/image/fetch/s--BuPz-p40--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nphrgz8yfnjylrwfr0yl.png");
+    background: #262b34;
     font-weight: bold;
     color: white;
     text-align: center;
-    /* border: 2px solid red; */
+    outline: 2px solid red;
     background-size: cover;
     /* background-image: 2px solid red; */
     background-repeat: no-repeat;
     /* width: 100vw; */
-    height: 100%;
+    height: 100vh;
+
 }
 
 .container {
     justify-content: center;
     align-items: center;
-    /* border: 2px solid red; */
     height: 100%;
 }
 
 .cards-viewing {
-    /* border: 2px solid red; */
     margin: 20px 0px 20px;
     padding: 20px 0px;
     position: relative;
@@ -34,8 +36,8 @@ body {
 
 h1 {
     color: goldenrod;
-    margin: 20px 0 0 0;
-    /* border: 2px solid red; */
+    margin: 0;
+    padding-top: 20px;
 
 }
 
