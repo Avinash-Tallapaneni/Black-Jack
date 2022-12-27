@@ -13,7 +13,7 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
-/*     outline: 2px solid red; */
+    /* outline: 2px solid red; */
     background-size: cover;
     /* background-image: 2px solid red; */
     background-repeat: no-repeat;
@@ -80,4 +80,41 @@ p {
 
 .result {
     margin: 20px 0 0;
+}
+
+.text-center{
+    display: flex;
+    color: wheat;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    font-size: 1.0rem;
+}
+
+svg{
+
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 .5rem;
+
+}
+
+
+strong>a{
+
+    padding: 10px 0 0 10px;
+    color: wheat;
+    text-decoration: none;
+    color: goldenrod;
+}
+
+svg
+{
+    color: wheat;
+    text-decoration: none;
+
 }
